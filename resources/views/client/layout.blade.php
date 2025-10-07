@@ -29,7 +29,7 @@
                     <div class="col-6">
                         <div class="header-logo d-none  ">
                             <a href="{{ url('/') }}">
-                                <img src="{{ asset('assets/imgs/andung.png') }}" class="img-fluid w-25 h-25" alt=""></a>
+                                <img src="{{ asset('assets/imgs/tuantran.png') }}" class="img-fluid w-25 h-25" alt=""></a>
                         </div>
                     </div>
                     <div class="col-6">
@@ -135,7 +135,7 @@
                         <div class="col-lg-2 ">
                             <div class="header-logo h-100 ">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ asset('assets/imgs/andung.png') }}" alt="" style="height: 100%">
+                                    <img src="{{ asset('assets/imgs/tuantran.png') }}" alt="" style="height: 100%">
                                 </a>
                             </div>
                         </div>

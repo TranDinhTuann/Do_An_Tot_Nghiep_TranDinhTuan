@@ -49,7 +49,7 @@
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <div class="user-profile">
                     <div class="user-image">
-                        <img src="{{ asset('assets/imgs/andung.png') }}">
+                        <img src="{{ asset('assets/imgs/tuantran.png') }}">
                     </div>
                     <div class="user-name">
                         ADMIN

@@ -37,7 +37,7 @@
                             <li>
                                 <a href="{{route('user.profile')}}"><i class="fa fa-user"></i> Hồ Sơ</a>
                             </li>
-                            
+
                             <li>
                                 <a href="{{route('ordered')}}" class="active"><i class="fa fa-shopping-cart"></i> Đơn Đặt Hàng</a>
                             </li>
@@ -117,7 +117,7 @@
                                                         @if (mb_strtoupper($item->status) == 'CHỜ XÁC NHẬN')
                                                             <button class="bg-transparent border-0 p-0">
                                                                 <a class="view-hover h3 ml-2 delete-order"
-                                                                    onclick="showModelDeleteOrder({{ $item->id }})"
+                                                                    onclick="showModelDeleteOrder({{ $item ->id }})"
                                                                     title="Hủy đơn hàng"><i class="fa fa-trash"></i></a>
                                                             </button>
                                                         @endif
@@ -216,7 +216,7 @@
                                                         <span >Phân loại hàng: ${item['loai']}</span>
                                                     </div>
                                                 </div>
-                                            </div>        
+                                            </div>
                                         </div>
                                         <div class="row mt-2 ">
                                             <div class="col-12">
@@ -225,7 +225,7 @@
                                                 <div>
                                                     <label for="image" class="text-start fs-6 ">Chọn hình ảnh: <i class="fa fa-camera" aria-hidden="true"></i></label>
                                                 <input id="image" class="d-none" type="file" name="review[${item['id']}][images]">
-                                                </div>  
+                                                </div>
                                                 <input type="number" class="form-control-sm " name="review[${item['id']}][rating]" min="1" max="5" placeholder="Đánh giá từ 1 đến 5" oninput="validity.valid||(value='5');" value="5" onchange="handelChangeRate(this)">
                                             </div>
                                         </div>

@@ -125,7 +125,7 @@
 
     <div class="wrapper">
         <div class="logo">
-            <img src="{{ asset('assets/imgs/andung.png') }}" alt="">
+            <img src="{{ asset('assets/imgs/tuantran.png') }}" alt="">
         </div>
         <div class=" name  ">
             Tuan Tran Shop

@@ -240,6 +240,6 @@
             }
         })
         let token = $('input[name="_token"]').val();
-        
+
     </script>
 @endsection

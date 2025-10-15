@@ -117,14 +117,13 @@
     </div>
 
     {{-- product-recommend --}}
-    <!-- <div class="new-product-area section-padding-2">
+     <div class="new-product-area section-padding-2">
         <div class="container ">
             <div class="row  justify-content-center ">
                 <div class="col-6 col-md-9 col-sm-11 w-100">
                     <div class="section-title text-center  ">
                         <h2 class="title">Gợi Ý Cho Bạn</h2>
-                        <p>A perfect blend of creativity, energy, communication, happiness and love. Let us arrange
-                            a smile for you.</p>
+                        <p>Khám phá những sản phẩm được chọn lọc dành riêng cho bạn – nơi kết hợp giữa sáng tạo, năng lượng và niềm vui mỗi ngày. Hãy để chúng tôi giúp bạn tìm thấy điều bạn yêu thích!.</p>
                     </div>
                 </div>
             </div>
@@ -170,7 +169,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
 
     {{-- San pham moi --}}
     <div class="features-product-area section-padding-5">

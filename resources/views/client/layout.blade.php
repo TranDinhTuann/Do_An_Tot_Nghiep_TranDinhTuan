@@ -17,6 +17,142 @@
         .header-logo img {
             border-radius: 50%;
         }
+        /* Custom header styling với màu nền và font-size tăng nhẹ */
+
+        /* Root theme colors (dễ thay đổi theo thương hiệu) */
+        :root {
+            --header-bg: #ffffff;          /* nền header */
+            --header-bg-soft: #f8f9fa;      /* nền phụ cho hover/section nhỏ nếu cần */
+            --header-border: #e6eaf0;       /* viền dưới header */
+            --text-dark: #1f2937;           /* màu chữ chính */
+            --primary: #0b5ed7;             /* màu chính cho active/nhấn mạnh */
+            --hover: #F5F9F1FF;                /* màu hover cho menu */
+            --logo-h: 58px;                  /* chiều cao logo mặc định (desktop) */
+            --logo-h-sm: 40px;               /* logo cho mobile nếu cần */
+            --font-base: 16px;               /* baseline font size */
+            --font-lg: 18px;                 /* font-size lớn hơn cho nav items */
+            --font-xl: 20px;                 /* font-size rất lớn (nếu muốn) */
+        }
+
+        /* Header base với màu nền và border nhẹ */
+        .main-header, .header-mobile, .header-mobile-menu, .header-section {
+            background-color: var(--header-bg);
+            border-bottom: 1px solid var(--header-border);
+            color: var(--text-dark);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+
+        /* Logo sizing (điểm nhìn) */
+        .header-logo img {
+            display: block;
+            height: var(--logo-h); /* desktop */
+            object-fit: contain;
+        }
+        @media (max-width: 991.98px) {
+            .header-logo img { height: var(--logo-h-sm); } /* mobile */
+        }
+
+        /* Font cho các phần chính */
+        .site-main-nav ul {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+            justify-content: center;
+        }
+        .site-main-nav .nav-item {
+            font-weight: 600;
+            color: var(--text-dark);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: var(--font-lg); /* tăng kích thước cho desktop */
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+        .site-main-nav .nav-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .site-main-nav .nav-item:hover {
+            background-color: var(--hover);
+        }
+        .site-main-nav .nav-item.active,
+        .site-main-nav .nav-item a.active {
+            color: #fff;
+            background-color: var(--primary);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+        }
+
+        /* Search bar styling */
+        .header-search form {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #f7f7f7;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid #e5e5e5;
+        }
+        .header-search input[type="text"] {
+            border: none;
+            outline: none;
+            background: transparent;
+            min-width: 180px;
+            font-size: var(--font-base);
+            color: var(--text-dark);
+        }
+        .header-search button {
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+        .header-search i { color: #6c757d; }
+
+        /* Account/cart area */
+        .header-account {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .header-account .dropdown-toggle {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 999px;
+            padding: 8px 12px;
+            color: #374151;
+            font-size: var(--font-base);
+        }
+        .header-account .dropdown-menu {
+            min-width: 180px;
+        }
+        .cart-block a {
+            color: #343a40;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            padding: 6px;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+        .cart-block a:hover { background-color: var(--hover); }
+        .fa-cart-shopping {
+            font-size: 1.25rem;
+        }
+
+        /* Mobile tweaks */
+        @media (max-width: 991.98px) {
+            .header-section { display: none; } /* ẩn header desktop nếu có mobile header thay thế */
+            .header-mobile { display: block; }
+            .header-mobile .header-logo img { height: 38px; }
+            .header-mobile .header-meta-info { padding: 6px 12px; }
+            .header-mobile-menu { background: #fff; border-top: 1px solid #eef2f7; }
+            .site-main-nav .navbar-mobile-wrapper { display: flex; flex-direction: column; gap: 8px; padding: 12px; }
+            .title-header a { font-weight: 600; color: var(--text-dark); text-decoration: none; font-size: var(--font-lg); }
+        }
+        .site-main-nav .site-nav ul>li>a {
+            font-size: 20px;
+        }
+        .link-underline link-underline-opacity-0 col-6 title-header{
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -106,14 +242,14 @@
                     <form action="{{ route('locsanpham') }}" method="get">
                         <input type="text" name="keyword" placeholder="Tìm kiếm sản phẩm " autocomplete="off"
                             class="" style="border:none;background: transparent">
-                        <button class="bg-transparent " style="border:none">
+                        <button class="bg-transparent " style="border:none ; margin: 8px!important;">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
                     </form>
                     {{-- <form type="GET" action="{{ route('locsanpham') }}">
-                        <input type="text" name="keyword" id="search-input"  placeholder="Tìm kiếm sản phẩm  "
+                        <input type="text" name="keyword" id="search-input"  placeholder="Tìm kiếm sản phẩm "
                             autocomplete="off">
-                        <button class="search-btn"><i class="icon-search"></i></button>
+                        <button class="search-btn" style=" margin: 8px!important;"><i class="icon-search"></i></button>
                     </form> --}}
                 </div>
             </div>
@@ -121,15 +257,15 @@
             <div class="site-main-nav">
                 <nav class="site-nav">
                     <ul class="navbar-mobile-wrapper">
-                        <li><a href="/">Trang chủ</a></li>
-                        <li><a href="/cuahang">Cửa hàng</a></li>
-                        <li><a href="">Tin tức</a></li>
+                        <li class="title-header"><a href="/">Trang chủ</a></li>
+                        <li class="title-header"><a href="/cuahang">Cửa hàng</a></li>
+                        <li class="title-header"><a href="">Tin tức</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
         <div class="header-section d-lg-block p-0 d-none ">
-            <div class="main-header">
+            <div class="main-header" style="background-color: aliceblue">
                 <div class="container position-relative ">
                     <div class="row align-items-center ">
                         <div class="col-lg-2 ">
@@ -143,17 +279,17 @@
                             <div class="site-main-nav d-flex justify-content-around w-100 ">
                                 <div class="site-nav d-flex justify-content-around w-100">
                                     <ul class="nav d-flex justify-content-around w-100 ">
-                                        <li class="nav-item mx-2">
-                                            <a href="{{ url('/') }}">
+                                        <li class="nav-item mx-2 title-header">
+                                            <a  href="{{ url('/') }}">
                                                 Trang chủ
                                             </a>
                                         </li>
-                                        <li class="nav-item mx-2 " class="menu-item-has-children position-static ">
+                                        <li class="nav-item mx-2 " class="menu-item-has-children position-static title-header ">
                                             <a href="{{ url('/cuahang') }}">
                                                 Cửa hàng
                                             </a>
                                         </li>
-                                        <li class="nav-item mx-2 ">
+                                        <li class="nav-item mx-2 title-header">
                                             <a href="{{ url('tin-tuc') }}">Tin tức</a>
                                         </li>
                                         <!-- <li class="nav-item mx-2 ">
@@ -169,8 +305,8 @@
                                     <form action="{{ route('locsanpham') }}" method="get">
                                         <input type="text" name="keyword" placeholder="Tìm kiếm " class="w-4"
                                             autocomplete="off" class=""
-                                            style="border:none;background: transparent">
-                                        <button class="bg-transparent " style="border:none">
+                                            style="border:none;background: transparent; font-size: 20px">
+                                        <button class="bg-transparent " style="border:none; margin: 8px !important;">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                         </button>
                                     </form>
@@ -184,13 +320,11 @@
                                         <div class="header-user">
                                             <div class="d-flex ">
                                                 <a href="{{ route('login') }}"
-                                                    class="link-underline link-underline-opacity-0 col-6">Đăng
-                                                    nhập
+                                                    class="link-underline link-underline-opacity-0 col-6 title-header" style="font-size: 20px">Đăng nhập
                                                 </a>
                                                 <span>/</span>
-                                                <a href="{{ route('register') }}"
-                                                    class="link-underline link-underline-opacity-0 col-6">Đăng
-                                                    ký
+                                                <a href="{{ route('register') }}" style="font-size: 20px"
+                                                    class="link-underline link-underline-opacity-0 col-6 title-header">Đăng ký
                                                 </a>
                                             </div>
                                         </div>
@@ -198,23 +332,23 @@
                                         <div class="header-user">
 
                                             <div class="dropdown">
-                                                <button class="btn  noborder dropdown-toggle text-black"
+                                                <button class="btn  noborder dropdown-toggle text-black" style="padding: 1px 12px 8px 12px;"
                                                     type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fa fa-user" aria-hidden="true"></i>
                                                 </button>
                                                 <ul class="dropdown-menu">
                                                     <li>
-                                                        <a class="dropdown-item" href="{{route('user.profile')}}">Hồ
+                                                        <a class="dropdown-item title-header" href="{{route('user.profile')}}">Hồ
                                                             sơ của tôi
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="{{ route('ordered') }}">Đơn
+                                                        <a class="dropdown-item title-header" href="{{ route('ordered') }}">Đơn
                                                             mua
                                                         </a>
                                                     </li>
                                                     <li>
-                                                        <a class="dropdown-item" href="{{ route('logout') }}">Đăng
+                                                        <a class="dropdown-item title-header" href="{{ route('logout') }}">Đăng
                                                             xuất
                                                         </a>
                                                     </li>

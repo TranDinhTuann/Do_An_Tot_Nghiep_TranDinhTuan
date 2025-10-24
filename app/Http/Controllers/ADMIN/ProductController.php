@@ -95,8 +95,10 @@ class ProductController extends Controller
 
         // dd($productID);
 
-        foreach($data['size'] as $key1=>$size){
-            foreach ($data['color'] as $key2 => $color) {
+        foreach($data['size'] as
+                $key1=>$size){
+            foreach ($data['color'] as
+                     $key2 => $color) {
                 $product_detail = new productDetail;
                 // dd($data[$size]);
                 $product_detail->product_id = $productID;
@@ -108,7 +110,6 @@ class ProductController extends Controller
             }
         }
         foreach ($data['image'] as $key => $item) {
-            // dd($item);
             $image = new Images;
             $extenstion = $item->getClientOriginalExtension();
             $filename = time().'_'.uniqid().'.'.$extenstion;

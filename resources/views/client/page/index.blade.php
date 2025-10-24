@@ -396,7 +396,10 @@
                     <div class="single-product">
                         <div class="product-image">
                             <a href="{{ route('chitietsanpham', ['name' => $item->slug]) }}">
-                                <img src="{{ asset('assets/uploads/' . $item->images[0]->url) }}" alt="">
+                                <img
+                                    src="{{ isset($item->images[0]) ? asset('assets/uploads/' . $item->images[0]->url) : asset('assets/uploads/no-image.png') }}"
+                                    alt=""
+                                >
                             </a>
                             <div class="action-links">
                                 <ul>

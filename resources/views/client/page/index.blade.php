@@ -258,6 +258,169 @@
         color: white !important;
     }
 
+    /* css bai viet    */
+
+    /* Tổng thể blog */
+    .blog-area {
+        background: #fff;
+        padding: 80px 0;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Tiêu đề chính */
+    .section-title h2.title {
+        font-size: 34px;
+        font-weight: 700;
+        color: #222;
+        margin-bottom: 15px;
+    }
+
+    .section-title p {
+        color: #555;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    /* Thẻ bài viết */
+    .single-blog {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+
+    .single-blog:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Ảnh bài viết — sửa lỗi ảnh nhỏ hơn thẻ */
+    .blog-image {
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+    }
+
+    .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease;
+    }
+
+    .single-blog:hover .blog-image img {
+        transform: scale(1.05);
+    }
+
+    /* Nội dung */
+    .blog-content {
+        padding: 22px 20px 25px;
+        text-align: left;
+    }
+
+    /* Tiêu đề bài viết */
+    .blog-content h4.title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #2a2a2a;
+        margin-bottom: 10px;
+    }
+
+    .blog-content h4.title a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .blog-content h4.title a:hover {
+        color: #ff4081;
+    }
+
+    /* Ngày đăng */
+    .articles-date {
+        font-size: 14px;
+        color: #ff4081;
+        margin-bottom: 10px;
+    }
+
+    /* Mô tả */
+    .four-line {
+        color: #444;
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    /* Footer */
+    .blog-footer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .blog-footer a.more {
+        color: #ff4081;
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .blog-footer a.more:hover {
+        color: #e73370;
+    }
+
+    /* Swiper arrows */
+    .swiper-next, .swiper-prev {
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+        width: 42px;
+        height: 42px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #333;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+
+    .swiper-next:hover, .swiper-prev:hover {
+        background: #ff4081;
+        color: #fff;
+    }
+
+    .swiper-next {
+        right: -20px;
+    }
+
+    .swiper-prev {
+        left: -20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .blog-image {
+            height: 240px;
+        }
+
+        .blog-content h4.title {
+            font-size: 20px;
+        }
+
+        .four-line {
+            font-size: 15px;
+        }
+    }
 
 
 </style>

@@ -5,6 +5,117 @@
             /* background-color: #f379a7; */
             margin: 3px;
         }
+        /* ---- PRODUCT GRID ---- */
+        .single-product {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .single-product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ---- PRODUCT IMAGE ---- */
+        .product-image {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #f2f2f2;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .single-product:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        /* ---- ACTION ICONS ---- */
+        .action-links {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 8px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .single-product:hover .action-links {
+            opacity: 1;
+        }
+
+        .action-links a {
+            background: #fff;
+            color: #333;
+            border-radius: 50%;
+            padding: 8px;
+            font-size: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            transition: background 0.3s;
+        }
+
+        .action-links a:hover {
+            background: #ff4d4d;
+            color: #fff;
+        }
+
+        /* ---- PRODUCT CONTENT ---- */
+        .product-content {
+            padding: 15px;
+        }
+
+        .product-name a {
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+            height: 40px;
+            overflow: hidden;
+        }
+
+        .product-name a:hover {
+            color: #ff4d4d;
+        }
+
+        .price-box {
+            font-size: 17px;
+            font-weight: bold;
+            color: #e63946;
+        }
+
+        /* ---- PAGINATION ---- */
+        .page-pagination .pagination {
+            margin-top: 30px;
+        }
+
+        .page-pagination .page-link {
+            color: #555;
+            border: none;
+            margin: 0 5px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .page-pagination .page-link:hover,
+        .page-pagination .page-item.active .page-link {
+            background: #ff4d4d;
+            color: #fff;
+        }
+
     </style>
 @endsection
 @section('content')

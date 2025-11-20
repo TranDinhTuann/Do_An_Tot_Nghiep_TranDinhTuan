@@ -90,7 +90,7 @@
     .single-blog {
         background: #fff;
         border-radius: 15px;
-        overflow: hidden;
+        /*overflow: hidden;*/
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         transition: all 0.3s ease;
     }
@@ -141,7 +141,7 @@
         background: #fff;
         border-radius: 16px;
         text-align: center;
-        overflow: hidden;
+        /*overflow: hidden;*/
         box-shadow: 0 4px 12px rgba(255, 102, 163, 0.1);
         transition: all 0.3s ease-in-out;
     }
@@ -214,7 +214,7 @@
     }
     .single-product {
         position: relative;
-        overflow: hidden;
+        /*overflow: hidden;*/
     }
 
     .single-product .product-image {
@@ -286,7 +286,7 @@
         background: #fff;
         border-radius: 18px;
         box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
+        /*overflow: hidden;*/
         transition: all 0.3s ease;
         height: 100%;
     }
@@ -300,7 +300,7 @@
     .blog-image {
         width: 100%;
         height: 320px;
-        overflow: hidden;
+        /*overflow: hidden;*/
     }
 
     .blog-image img {
@@ -440,6 +440,17 @@
         window.addEventListener('scroll', checkVisible);
         checkVisible();
     });
+    var swiper = new Swiper(".blogSlider", {
+        slidesPerView: 3,        // ⭐ Chỉ hiển thị đúng 3 sản phẩm
+        spaceBetween: 30,        // Khoảng cách giữa các sản phẩm
+        slidesPerGroup: 1,       // Click arrow trượt 1 sản phẩm (hoặc 3 tùy bạn)
+        loop: false,             // Không cần loop nếu không muốn lặp vô hạn
+        navigation: {
+            nextEl: ".swiper-next",
+            prevEl: ".swiper-prev",
+        }
+    });
+
 </script>
 
 <div class="banner-main">
@@ -682,11 +693,11 @@
                                             <ul>
                                                 <li>
                                                     <a class="product-detail" href=""><i class="fa fa-eye"
-                                                                                         aria-hidden="true"></i></a>
+                                                                                         aria-hidden="false"></i></a>
                                                 </li>
                                                 <li>
                                                     <a class="add-to-cart" href=""><i
-                                                            class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                                            class="fa fa-cart-plus" aria-hidden="false"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -723,11 +734,11 @@
                                                 <li>
                                                     <a class="product-detail"
                                                        href="{{ route('chitietsanpham', ['name' => $item->slug]) }}"><i
-                                                            class="fa fa-eye" aria-hidden="true"></i></a>
+                                                            class="fa fa-eye" aria-hidden="false"></i></a>
                                                 </li>
                                                 <li>
                                                     <a class="add-to-cart" href=""><i
-                                                            class="fa fa-cart-plus" aria-hidden="true"></i></a>
+                                                            class="fa fa-cart-plus" aria-hidden="false"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -798,7 +809,7 @@
                     @endforeach
 
                     <!-- Add Arrows -->
-                    @if (count($post) > 3)
+                    @if (count($post) > 4)
                     <div class="swiper-next" tabindex="0" role="button" aria-label="Next slide"
                          aria-controls="swiper-wrapper-5eab3a3b40429f0d"><i class="fa fa-angle-right"></i></div>
                     <div class="swiper-prev" tabindex="0" role="button" aria-label="Previous slide"

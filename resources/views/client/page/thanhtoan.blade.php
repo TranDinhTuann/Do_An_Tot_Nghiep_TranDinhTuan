@@ -117,12 +117,12 @@
                                     <span>Thanh toán khi nhận hàng</span>
                                 </label>
                             </li>
-                            <li class="cus-radio payment-radio">
-                                <input type="radio" name="checkout" value="vnpay" id="vnpay">
-                                <label for="vnpay">
-                                    <span>VNPay</span>
-                                </label>
-                            </li>
+<!--                            <li class="cus-radio payment-radio">-->
+<!--                                <input type="radio" name="checkout" value="vnpay" id="vnpay">-->
+<!--                                <label for="vnpay">-->
+<!--                                    <span>VNPay</span>-->
+<!--                                </label>-->
+<!--                            </li>-->
                         </ul>
                     </div>
                     <div class="col-lg-12">
